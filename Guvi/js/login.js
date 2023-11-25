@@ -1,26 +1,19 @@
 $(document).ready(function() {
     $('#loginForm').submit(function(event) {
 
-
-      // Prevent default form submission
       event.preventDefault();
 
-      // Serialize form data
       var formData = $(this).serialize();
     var email = $('#email').val();
     var password = $('#password').val();
 
-
-      // AJAX call
       $.ajax({
         type: 'POST',
         url: './php/login.php',
         data: formData,
         success: function(response) {
-          const responseData = JSON.parse(response) // Log the server response
+          const responseData = JSON.parse(response) 
 
-
-          // Handle success (if needed)
           if(responseData.status==='success'){
             localStorage.setItem('email',JSON.stringify(responseData.email))
             localStorage.setItem('id',JSON.stringify(responseData.id))
@@ -32,8 +25,6 @@ $(document).ready(function() {
         },
         error: function(xhr, status, error) {
        
-          
-          // Handle errors (if needed)
         }
       });
     });

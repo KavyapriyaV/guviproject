@@ -14,7 +14,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO `users` (`username`, `email`, `password`, `dob`, `age`, `contact`) VALUES
-('madhu', 'madhu@gmail.com', '123456', '2001-10-26', 22, '1234567891'),
-('pragadeeshwaran', 'pragadeesh@gmail.com', '123456', '2001-07-04', 22, '9150209025');
+('sample', 'sample@gmail.com', '123456', '2001-10-26', 22, '1234567891'),
+('kavya', 'kavya123@gmail.com', 'Kavya123', '2003-01-05', 22, '9150209025');
 
 COMMIT;

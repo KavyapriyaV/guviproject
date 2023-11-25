@@ -7,16 +7,16 @@ document.getElementById('editProfileBtn').addEventListener('click', function() {
   });
 
   $(document).ready(function() {
-      // AJAX call
+      
       $.ajax({
         type: 'POST',
-        url: './php/display.php',
+        url: './php/profile.php',
         data: {
  id : JSON.parse(localStorage.getItem('id')),
         },
         success: function(response) {
-          const responseData = JSON.parse(response) // Log the server response
-          // Handle success (if needed)
+          const responseData = JSON.parse(response) 
+
           if(responseData.status==='success'){
             console.log('success')
             $('#email').val(responseData.email)
@@ -28,25 +28,20 @@ document.getElementById('editProfileBtn').addEventListener('click', function() {
           }
         },
         error: function(xhr, status, error) {
-    
-          // Handle errors (if needed)
         }
       });
     
       $('#profileForm').submit(function(event) {
-        // Prevent default form submission
         event.preventDefault();
   
-        // Serialize form data
         var formData = $(this).serialize();
   
-        // AJAX call
         $.ajax({
           type: 'POST',
           url: './php/update.php',
           data: formData,
           success: function(response) {
-            // Handle success (if needed)
+  
             $('#editProfileBtn').removeClass('d-none');
             $('#saveProfileBtn').addClass('d-none');
           },

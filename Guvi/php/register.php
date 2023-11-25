@@ -1,20 +1,17 @@
 <?php
-// Establish a connection to MySQL (replace these variables with your database credentials)
+
 include("database.php");
 
-
-// Get values from the form submission
 $username = $_POST['username'];
 $email = $_POST['email'];
-$password = $_POST['password']; // Hash the password for security
+$password = $_POST['password']; 
 $dob = $_POST['dob'];
 $age = $_POST['age'];
 $contact = $_POST['contact'];
 
-// Prepare and bind the SQL statement with placeholders for data insertion
 $stmt = $conn->prepare("INSERT INTO users (username, email, password, dob, age, contact) VALUES (?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("ssssis", $username, $email, $password, $dob, $age, $contact);
-// Execute the prepared statement
+
 if ($stmt->execute()) {
     $data = array(
         'status' => 'success'
@@ -29,7 +26,6 @@ if ($stmt->execute()) {
 
 }
 
-// Close the statement and connection
 $stmt->close();
 $conn->close();
 ?>
