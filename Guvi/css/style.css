@@ -1,0 +1,38 @@
+
+body {
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 3rem;
+}
+
+
+.login-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.button:hover {
+    background-color: #ff5e78;
+}
+
+a {
+    color: #ff758c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
